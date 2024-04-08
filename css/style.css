@@ -1,0 +1,13 @@
+.raleway-font {
+    font-family: "Raleway", sans-serif;
+
+}
+
+.card-body :where(p) {
+    flex-grow: 0;
+}
+
+/* .card.image-full {
+    background-color: none !important;
+    
+} */

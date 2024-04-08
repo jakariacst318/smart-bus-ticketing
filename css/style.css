@@ -2,6 +2,10 @@
     font-family: "Raleway", sans-serif;
 
 }
+.inter-font {
+    font-family: "Inter", sans-serif;
+
+}
 
 .card-body :where(p) {
     flex-grow: 0;

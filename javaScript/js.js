@@ -7,56 +7,88 @@ for (const button of allBtn) {
 
     button.addEventListener('click', function (e) {
 
-        button.classList.add("select-seat-bg");
+
+        button.style.color = '#ffffff'
+        button.style.backgroundColor = '#1DD100'
         button.disabled = true;
+
         seatCount = seatCount + 1;
 
-        
-        // const seatName = e.target.childNodes[0];
         const seatName = e.target.innerText;
-        
-        // console.log( e.target.innerText)
-        
+
+
         const selectSeatContainer = document.getElementById('select-seat-container');
-        // button.classList.add("select-seat-bg");
-        // const li = document.createElement('li');
 
-        // const p = document.createElement('p')
-        // p.innerText = jsonString;
-
-        // li.appendChild(p)
-        // selectSeatContainer.appendChild(li)
-
-        // ###############################################
         const div = document.createElement('div');
-
         const p = document.createElement('p');
         p.innerText = seatName;
 
-        // CLASS VS PRICE
-         const  p2 = document.createElement('p');
-         p2.innerText = ('Economoy');
+        // seat VS price
+        const p2 = document.createElement('p');
+        p2.innerText = ('Economoy');
 
-         const  p3 = document.createElement('p');
-         p3.innerText = ('500');
+        const p3 = document.createElement('p');
+        p3.innerText = ('500');
 
 
         div.appendChild(p);
         div.appendChild(p);
         div.appendChild(p2);
         div.appendChild(p3);
+
+        // seats-left down
+        const seatsLeft = document.getElementById('seats-left').innerText;
+        const convertedSeatsLeft = parseInt(seatsLeft)
+        document.getElementById('seats-left').innerText = convertedSeatsLeft -1;
+
+
         selectSeatContainer.appendChild(div);
 
-        // TOTAL PRICE     
+        // total price     
         const totalPrice = document.getElementById('total-price').innerText;
-        const convertedTotalPrice = parseInt (totalPrice)
-        document.getElementById('total-price').innerText = convertedTotalPrice + 500;
-        // console.log(typeof convertedTotalPrice, 'ffffffffff')     
+        const convertedTotalPrice = parseInt(totalPrice)
+        const totalSum = convertedTotalPrice + 500;
+        setInnerText('total-price', totalSum);
+        
 
+
+        // grand total price
+        const grandTotal = document.getElementById('grand-total').innerText;
+        const convertedGrandTotalPrice = parseInt(grandTotal)
+        const grandTotalSum = convertedGrandTotalPrice + 500;
+
+        setInnerText('grand-total', grandTotalSum);
         setInnerText('seatCount', seatCount);
     })
 }
 
-function setInnerText(id, value) {
-    document.getElementById(id).innerText = value;
-}
+
+//  coupon code button 
+document.getElementById('copupon-input').addEventListener('keyup', function (event) {
+    const text = event.target.value;
+    const couponBtn = document.getElementById('copupon-btn');
+    if (text === 'NEW15' || text === 'Couple 20') {
+        couponBtn.removeAttribute('disabled');
+    }
+    else {
+        couponBtn.setAttribute('disabled', true);
+    }
+
+})
+
+// next-bnt disable 
+
+document.getElementById('phone-number').addEventListener('keyup', function (event) {
+    const text = event.target.value;
+    const deleteBtn = document.getElementById('next-bnt');
+    if (this.value.length > 10 || text === allBtn) {
+        // ----------------------------------------------------
+    // if (text === 'number' || text === '20') {
+        deleteBtn.removeAttribute('disabled');
+    }
+    else {
+        deleteBtn.setAttribute('disabled', true);
+    }
+
+})
+

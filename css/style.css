@@ -10,14 +10,19 @@
 .card-body :where(p) {
     flex-grow: 0;
 }
-.border{
-    /* box-sizing: border-box; */
+/* .border{
 border-top: 2px solid rgb(29, 209, 0);
 border-radius: 88px 88px 0px 0px;
-/* background: rgb(247, 248, 248); */
-}
-
-/* .card.image-full {
-    background-color: none !important;
-    
 } */
+
+.select-seat-container div{
+    font-size: 18px ;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    color: #03071299;
+}
+.select-seat-bg{
+    background-color: #1DD100;
+    color: white;
+}

@@ -11,6 +11,7 @@ for (const button of allBtn) {
         button.style.color = '#ffffff'
         button.style.backgroundColor = '#1DD100'
         button.disabled = true;
+        // console.log(button,'tas button bus button')
 
         seatCount = seatCount + 1;
 
@@ -57,82 +58,43 @@ for (const button of allBtn) {
         const convertedGrandTotalPrice = parseInt(grandTotal)
         const grandTotalSum = convertedGrandTotalPrice + 500;
 
+        // 
+        document.getElementById('phone-number').addEventListener('keyup', function (event) {
+            const text = event.target.value;
+            const nextBtn = document.getElementById('next-bnt');
+            if (this.value.length > 10 || text === button) {
+                nextBtn.removeAttribute('disabled');
+            }
+            else {
+                nextBtn.setAttribute('disabled', true);
+            }
+
+        })
+
+
         setInnerText('grand-total', grandTotalSum);
         setInnerText('seatCount', seatCount);
     })
 }
 
+const clickButtons = document.getElementsByClassName("select-bnt");
+const submitButton = document.getElementById("copupon-btn");
+let clickCount = 0;
 
-//  coupon code button 
-document.getElementById('copupon-input').addEventListener('keyup', function (event) {
-    const text = event.target.value;
-    const couponBtn = document.getElementById('copupon-btn');
-    if (text === 'NEW15' || text === 'Couple 20') {
-        couponBtn.removeAttribute('disabled');
-    }
-    else {
-        couponBtn.setAttribute('disabled', true);
-    }
+for (let i = 0; i < clickButtons.length; i++) {
+    clickButtons[i].addEventListener("click", function () {
+        clickCount++;
+        if (clickCount === 4) {
+            submitButton.disabled = false;
+        }
+    });
+}
 
-})
-
-// next-bnt disable 
-
-document.getElementById('phone-number').addEventListener('keyup', function (event) {
-    const text = event.target.value;
-    const deleteBtn = document.getElementById('next-bnt');
-    if (this.value.length > 10 || text === allBtn) {
-        // ----------------------------------------------------
-        // if (text === 'number' || text === '20') {
-        deleteBtn.removeAttribute('disabled');
-    }
-    else {
-        deleteBtn.setAttribute('disabled', true);
-    }
-
-})
-
-// ###############################################
-
-// $$$$$$$$$$$$$$$$$$$
-// document.getElementsByClassName("select-bnt").addEventListener("click", function () {
-// 
-//     deleteBtn.removeAttribute('disabled') ,false;
-// });
-
-/* document.getElementById("phone-number").addEventListener("input", function () {
-   
-    if (this.value.length > 10) {
-
-        document.getElementById("next-bnt").disabled = false;
-    } else {
-
-        document.getElementById("submitButton").disabled = true;
-    }
-}); */
-
-// $$$$$$$$$$$$$$$$$$$
 
 function setInnerText(id, value) {
     document.getElementById(id).innerText = value;
 }
 
-/* 
-function grandTotalSum(category){
-    // setInnerText('total-price', totalSum);
-    const totalCost = document.getElementById('total-price').innerText;
-    const convertedTotalCost = parseInt(totalCost);
-    console.log(typeof  convertedTotalCost, 'wowowowowowow')
-
-    if(category == 'NEW15'){
-        // setInnerText('grand-total'),convertedTotalCost - 100;
-        const fastcoupon = convertedTotalCost + 
-        setInnerText('grand-total'),convertedTotalCost -100;
-    }
-    else{
-        setInnerText('grand-total'),convertedTotalCost
-    }
-}  */
 
 function success() {
     const headerContainer = document.getElementById("header-section");
@@ -140,6 +102,8 @@ function success() {
 
     const mainContainer = document.getElementById("main-container");
     mainContainer.classList.add('hidden');
+    const footerContainer = document.getElementById("footer-section");
+    footerContainer.classList.add('hidden');
 
     const modalSection = document.getElementById("modal-section");
     modalSection.classList.remove('hidden');

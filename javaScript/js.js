@@ -39,7 +39,7 @@ for (const button of allBtn) {
         // seats-left down
         const seatsLeft = document.getElementById('seats-left').innerText;
         const convertedSeatsLeft = parseInt(seatsLeft)
-        document.getElementById('seats-left').innerText = convertedSeatsLeft -1;
+        document.getElementById('seats-left').innerText = convertedSeatsLeft - 1;
 
 
         selectSeatContainer.appendChild(div);
@@ -49,7 +49,7 @@ for (const button of allBtn) {
         const convertedTotalPrice = parseInt(totalPrice)
         const totalSum = convertedTotalPrice + 500;
         setInnerText('total-price', totalSum);
-        
+
 
 
         // grand total price
@@ -83,7 +83,7 @@ document.getElementById('phone-number').addEventListener('keyup', function (even
     const deleteBtn = document.getElementById('next-bnt');
     if (this.value.length > 10 || text === allBtn) {
         // ----------------------------------------------------
-    // if (text === 'number' || text === '20') {
+        // if (text === 'number' || text === '20') {
         deleteBtn.removeAttribute('disabled');
     }
     else {
@@ -133,3 +133,16 @@ function grandTotalSum(category){
         setInnerText('grand-total'),convertedTotalCost
     }
 }  */
+
+function success() {
+    const headerContainer = document.getElementById("header-section");
+    headerContainer.classList.add('hidden');
+
+    const mainContainer = document.getElementById("main-container");
+    mainContainer.classList.add('hidden');
+
+    const modalSection = document.getElementById("modal-section");
+    modalSection.classList.remove('hidden');
+
+
+}

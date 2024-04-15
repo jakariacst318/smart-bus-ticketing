@@ -92,3 +92,44 @@ document.getElementById('phone-number').addEventListener('keyup', function (even
 
 })
 
+// ###############################################
+
+// $$$$$$$$$$$$$$$$$$$
+// document.getElementsByClassName("select-bnt").addEventListener("click", function () {
+// 
+//     deleteBtn.removeAttribute('disabled') ,false;
+// });
+
+/* document.getElementById("phone-number").addEventListener("input", function () {
+   
+    if (this.value.length > 10) {
+
+        document.getElementById("next-bnt").disabled = false;
+    } else {
+
+        document.getElementById("submitButton").disabled = true;
+    }
+}); */
+
+// $$$$$$$$$$$$$$$$$$$
+
+function setInnerText(id, value) {
+    document.getElementById(id).innerText = value;
+}
+
+/* 
+function grandTotalSum(category){
+    // setInnerText('total-price', totalSum);
+    const totalCost = document.getElementById('total-price').innerText;
+    const convertedTotalCost = parseInt(totalCost);
+    console.log(typeof  convertedTotalCost, 'wowowowowowow')
+
+    if(category == 'NEW15'){
+        // setInnerText('grand-total'),convertedTotalCost - 100;
+        const fastcoupon = convertedTotalCost + 
+        setInnerText('grand-total'),convertedTotalCost -100;
+    }
+    else{
+        setInnerText('grand-total'),convertedTotalCost
+    }
+}  */

@@ -95,7 +95,7 @@ for (let i = 0; i < clickButtons.length; i++) {
 function setInnerText(id, value) {
     document.getElementById(id).innerText = value;
 }
-// discount show --------------------------------------------------------------------------
+
 
 
 //  coupon code
@@ -103,6 +103,8 @@ function grandTotalcostCoupon() {
 
     const couponCodeInput = document.getElementById('copupon-input').value;
     const totalPrice = document.getElementById('total-price').innerText;
+    const couponSection = document.getElementById("coupon-section");
+    couponSection.classList.add('hidden');
 
     const convertedTotalPrice = parseInt(totalPrice)
     const discount = convertedTotalPrice * 0.15;

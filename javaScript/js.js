@@ -95,6 +95,8 @@ for (let i = 0; i < clickButtons.length; i++) {
 function setInnerText(id, value) {
     document.getElementById(id).innerText = value;
 }
+// discount show --------------------------------------------------------------------------
+
 
 //  coupon code
 function grandTotalcostCoupon() {
@@ -106,13 +108,19 @@ function grandTotalcostCoupon() {
     const discount = convertedTotalPrice * 0.15;
     const discountCouple = convertedTotalPrice * 0.20;
 
+
+    // discount  show  star
+    document.getElementById("copupon-btn").value;
+    document.getElementById("discount-container").innerText = "Discount Amount: "  + discount;
+    // discount  show end
+
     if (couponCodeInput == 'NEW15') {
         setInnerText('grand-total', convertedTotalPrice - discount);
     }
-    else if( couponCodeInput === 'Couple 20'){
+    else if (couponCodeInput === 'Couple 20') {
         setInnerText('grand-total', convertedTotalPrice - discountCouple)
     }
-    else if( couponCodeInput){
+    else if (couponCodeInput) {
         alert('Invalid Coupon Code')
     }
     else {
@@ -120,6 +128,7 @@ function grandTotalcostCoupon() {
     }
 
 }
+
 
 //  next button click / modal open
 function success() {

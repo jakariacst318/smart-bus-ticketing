@@ -23,10 +23,9 @@
     border-top: dashed 2px #FFFFFF4D;
 }
 
-.discount-container div{
+.discount-container {
+    padding-bottom: 10px;
     font-size: 18px ;
     font-weight: 600;
-    display: flex;
-    justify-content: space-between;
-    color: #03071299;
+    color: red;
 }

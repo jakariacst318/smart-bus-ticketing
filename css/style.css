@@ -19,4 +19,14 @@
     justify-content: space-between;
     color: #03071299;
 }
+.border-top{
+    border-top: dashed 2px #FFFFFF4D;
+}
 
+.discount-container div{
+    font-size: 18px ;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    color: #03071299;
+}

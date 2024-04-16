@@ -344,11 +344,15 @@
                                 <h2 class="font-semibold text-lg pt-16">Total Price </h2>
                                 <h2 class="font-semibold text-lg pt-16">BDT <span id="total-price">0</span> </h2>
                             </div>
+                            <!-- dynamic  discount-->
+                            <div id="discount-container" class="discount-container inter-font ">
+
+                            </div>
                             <label class="input border-none flex items-center gap-2 ">
                                 <input id="copupon-input" type="text" class="grow text-lg font-semibold"
                                     placeholder=" Have any copupon?" />
 
-                                <button onclick="grandTotalSum('NEW15')" id="copupon-btn"
+                                <button onclick="grandTotalcostCoupon('NEW15')" id="copupon-btn"
                                     class="btn bg-[#1DD100] text-white" disabled>Apply</button>
                             </label>
                             <div class="flex justify-between inter-font py-4">
@@ -401,7 +405,7 @@
     </main>
 
     <footer id="footer-section" class="bg-[#030712] text-neutral-content px-36 py-10 mt-28 w-full">
-        <div class=" flex justify-between ">
+        <div class=" flex justify-between pb-24">
             <aside>
                 <h2 class="font-bold text-4xl py-10">Sirajganj Line</h2>
                 <p class="text-lg inter-font">P-Ticket is a digital platform to make your <br>daily commuting better..
@@ -418,9 +422,9 @@
                 </div>
             </nav>
         </div>
-        <div class="flex justify-between pt-32">
+        <div class="flex justify-between pt-10 border-top inter-font">
             <div>
-                <p>@all rights reserved, Sirajganj Line services limited.2024</p>
+                <p class="text-[#FFFFFFB3] ">@all rights reserved, Sirajganj Line services limited.2024</p>
             </div>
 
             <div class="font-semibold flex gap-x-8">

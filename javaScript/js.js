@@ -11,7 +11,7 @@ for (const button of allBtn) {
         button.style.color = '#ffffff'
         button.style.backgroundColor = '#1DD100'
         button.disabled = true;
-        // console.log(button,'tas button bus button')
+
 
         seatCount = seatCount + 1;
 
@@ -29,7 +29,7 @@ for (const button of allBtn) {
         p2.innerText = ('Economoy');
 
         const p3 = document.createElement('p');
-        p3.innerText = ('500');
+        p3.innerText = ('550');
 
 
         div.appendChild(p);
@@ -48,7 +48,7 @@ for (const button of allBtn) {
         // total price     
         const totalPrice = document.getElementById('total-price').innerText;
         const convertedTotalPrice = parseInt(totalPrice)
-        const totalSum = convertedTotalPrice + 500;
+        const totalSum = convertedTotalPrice + 550;
         setInnerText('total-price', totalSum);
 
 
@@ -56,9 +56,9 @@ for (const button of allBtn) {
         // grand total price
         const grandTotal = document.getElementById('grand-total').innerText;
         const convertedGrandTotalPrice = parseInt(grandTotal)
-        const grandTotalSum = convertedGrandTotalPrice + 500;
+        const grandTotalSum = convertedGrandTotalPrice + 550;
 
-        // 
+        // next button  number input
         document.getElementById('phone-number').addEventListener('keyup', function (event) {
             const text = event.target.value;
             const nextBtn = document.getElementById('next-bnt');
@@ -70,6 +70,7 @@ for (const button of allBtn) {
             }
 
         })
+
 
 
         setInnerText('grand-total', grandTotalSum);
@@ -95,7 +96,32 @@ function setInnerText(id, value) {
     document.getElementById(id).innerText = value;
 }
 
+//  coupon code
+function grandTotalcostCoupon() {
 
+    const couponCodeInput = document.getElementById('copupon-input').value;
+    const totalPrice = document.getElementById('total-price').innerText;
+
+    const convertedTotalPrice = parseInt(totalPrice)
+    const discount = convertedTotalPrice * 0.15;
+    const discountCouple = convertedTotalPrice * 0.20;
+
+    if (couponCodeInput == 'NEW15') {
+        setInnerText('grand-total', convertedTotalPrice - discount);
+    }
+    else if( couponCodeInput === 'Couple 20'){
+        setInnerText('grand-total', convertedTotalPrice - discountCouple)
+    }
+    else if( couponCodeInput){
+        alert('Invalid Coupon Code')
+    }
+    else {
+        setInnerText('grand-total', convertedTotalPrice)
+    }
+
+}
+
+//  next button click / modal open
 function success() {
     const headerContainer = document.getElementById("header-section");
     headerContainer.classList.add('hidden');
@@ -110,3 +136,4 @@ function success() {
 
 
 }
+
